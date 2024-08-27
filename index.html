@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="./resources/geo_engine.png" type="image/png">
+  <!-- Google tag (gtag.js)
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WLB3DPRW48"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WLB3DPRW48');
+  </script>  -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta content="GeoLLM-Engine: A Realistic Environment for Building Geospatial Copilots" property="og:title">
+  <meta content="GeoLLM-Engine: A Realistic Environment for Building Geospatial Copilots" property="twitter:title">
+  <meta content="We introduce GeoLLM-Engine, a realistic environment for building and evaluating geospatial Copilots." name="description">
+  <meta content="We introduce GeoLLM-Engine, a realistic environment for building and evaluating geospatial Copilots." property="og:description">
+  <meta content="We introduce GeoLLM-Engine, a realistic environment for building and evaluating geospatial Copilots." property="twitter:description">
+  <meta property="og:type" content="website">
+ 
+  <title>GeoLLM-Engine: A Realistic Environment for Building Geospatial Copilots</title>
+  <meta name="description" content="We introduce GeoLLM-Engine, a realistic environment for building and evaluating geospatial Copilots.">
+  <meta name="keywords" content="geospatial Copilots, large language models, remote sensing, LLMs">
+  <link rel="icon" type="image/x-icon" href="assets/favicon_io/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon_io">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon_io/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon_io/favicon-16x16.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/custom.css">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+
+  <style>
+    .image-set {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 3px;
+      margin-bottom: 3px;
+    }
+    .hypotheses {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .square-image {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      overflow: hidden;
+    }
+  </style>
+
+</head>
+<body>
+
+<section class="hero space-background has-text-white">
+  <div class="hero-body space-background-overlay">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title has-text-black">GeoLLM-Engine: An LLM Engine for Geospatial Copilots</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/simranjit2112/" target="_blank">Simranjit Singh</a>,
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/michael-fore-550b3b123/" target="_blank">Michael Fore</a>,
+            </span>
+            <span class="author-block">
+              <a href="https://ai.stanford.edu/~syyeung/" target="_blank">Dimitrios Stamoulis</a>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">CoStrategist R&D Group, Microsoft</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- arXiV Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.15500" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Paper Link. -->
+              <span class="link-block">
+                <a href="https://openaccess.thecvf.com/content/CVPR2024W/EarthVision/html/Singh_GeoLLM-Engine_A_Realistic_Environment_for_Building_Geospatial_Copilots_CVPRW_2024_paper.html" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-alt"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.15500" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (coming soon)</span>
+                  </a>
+              </span>
+              <!-- Dataset Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://arxiv.org/abs/2404.15500"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                     <!-- include huggingface emoji here -->
+                     <i class="fas fa-database"></i>
+                      <!-- <i class="fab fa-youtube"></i> -->
+                  </span>
+                  <span>Dataset (coming soon)</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <div class="column has-text-centered">
+          <!-- <h2 class="title is-4">Info</h2> -->
+          <img src="./resources/geollm-engine-camready.png" height="50%" width="50%" />
+          <div class="content has-text-justified">
+            <p>
+              GeoLLM-Engine offers a realistic web environment equipped with comprehensive APIs for developing, deploying, and evaluating geospatial Copilots on tasks that authentically reflect the workflows of remote sensing analysts. Unlike existing LLM benchmarks which rely on simplified question-answer pairs, GeoLLM-Engine introduces nuanced, long-horizon natural-language commands over a wide range of tasks - from object detection and land classification to document retrieval and web search.  
+            </p>  
+          <br>
+          </div>
+        </div>
+      </div>
+    </div>  
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>
+      @InProceedings{Singh_2024_CVPR,
+        author    = {Singh, Simranjit and Fore, Michael and Stamoulis, Dimitrios},
+        title     = {GeoLLM-Engine: A Realistic Environment for Building Geospatial Copilots},
+        booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR) Workshops},
+        month     = {June},
+        year      = {2024},
+        pages     = {585-594}
+      }
+    </code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            Website template: 
+            <a href="https://github.com/nerfies/nerfies.github.io">
+              Nerfies
+            </a> project licensed under
+            <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+              CC BY-SA 4.0
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
